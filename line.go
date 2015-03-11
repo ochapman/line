@@ -22,7 +22,7 @@ func GetFileLine(file string) (Line, error) {
 	defer f.Close()
 	r := bufio.NewReader(f)
 	lines := make(Line)
-	for i := 0; ; i++ {
+	for i := 1; ; i++ {
 		line, _, err := r.ReadLine()
 		if err != nil {
 			if err.Error() == "EOF" {
